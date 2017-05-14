@@ -18,6 +18,11 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'therubyracer', :platform=>:ruby
+
+#added 
+
+gem 'pry', '~> 0.10.4'
+
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

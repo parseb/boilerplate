@@ -1,0 +1,15 @@
+<h4>Create meeting</h4>
+<br>
+
+<%= form_for @meeting, url: {action: 'create', method: 'post'} do |f| %>
+<h6>Title:</h6><br>
+<%= f.text_field :title %>
+<h6>Description:</h6><br> 
+<%= f.text_field :description %>
+<h6>Your meeting starts:</h6> 
+<%= f.datetime_select :start_at, class: 'datetimepicker' %>
+<%= f.button 'Now'%>  
+<%= f.hidden_field :user_id %> <br>
+<%= f.submit 'Create' %> 
+<% end %> 
+
