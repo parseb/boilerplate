@@ -1,0 +1,9 @@
+
+<%= form_for @task, url: meeting_tasks_path(@meeting.id), action: 'create'   do |f| %> 
+	<h6>Title</h6>	<%= f.text_field :title %> 
+	<%= f.hidden_field :meeting_id %> <br>
+	<h6>Description</h6><%= f.text_area :description %> <br>
+	<%= f.hidden_field :data %> 
+	<%= f.submit %> 
+
+<% end %> 

@@ -1,0 +1,47 @@
+
+<div class="well">
+<h5>Title: <%= @meeting.title %> </h5><br>
+
+<h6><%= @meeting.description + " | " + "Starts at: " + @meeting.start_at  %> </h6>	 <br> 
+	<button>Speak #add to que</button> <br>
+	<h5>Que :  |USERX| |USERY|</h5><br>
+	<h5>Speaking : USERX </h5>	
+</div>
+	
+	<% if @romeo %> <br>
+		<button class='click' onClick='showform();'>Add task </button>
+	<% end %> 
+	<% if @tasks.any? %> 
+		<% @tasks.each do |x| %>
+			<div class="panel panel-default">
+  			<div class="panel-heading">
+    		<h4 class="panel-title"> <%= x.title %> </h4>
+  		</div>
+  		<div class="panel-body">
+    		<%= x.description%> 
+  		</div>
+  			<div class="box">
+  				<% if @romeo %> <button>Start Vote</button> <% end %> <br>
+  				<button>For</button><button>Against</button><button>Abstain</button>
+  			</div>
+		</div>
+		<% end %> 
+	<% end %> 
+
+<!-- Add TASK FORM --> 	
+	<div class="form">
+		<%= render 'add_task' %> 
+	</div>
+<!-- END-taskform --> 	
+
+</div>
+
+<% #meeting data stream structure, render for each, task, idetify by user presence %> 
+
+<script type="text/javascript">
+		$('.form').hide() 
+	function showform(){
+		$('.form').show()
+		$('.click').hide() 
+	}
+</script>

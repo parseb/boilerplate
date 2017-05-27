@@ -1,0 +1,11 @@
+<title>Meetings</title>
+<div class="well">
+	<% if @meetings.any? %> 
+		<% @meetings.each do |m|%>
+		<div class="box">
+			<h5><%= m.title%> | On: <%= m.start_at %> CLOSED / In Session / Comming </h5><hr><br>
+			<button><%= link_to 'Expand', meeting_path(m.id) %> </button>
+		</div>
+	<% end %> 
+	<% end %> 
+</div>
